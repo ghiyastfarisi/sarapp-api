@@ -1,0 +1,9 @@
+[application]
+name = "sarapp"
+version = "1.0"
+port = 9901
+
+[database.main]
+dsn = "mysql"
+port = 3306
+maxconnection = 1000

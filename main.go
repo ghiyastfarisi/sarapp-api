@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/ghiyastfarisi/sarapp-api/config"
 	"github.com/gin-gonic/gin"
 )
 
@@ -34,6 +35,7 @@ type (
 )
 
 func main() {
+	config.Init()
 	handler()
 }
 
