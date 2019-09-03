@@ -10,13 +10,13 @@ import (
 type (
 	stdResp struct {
 		Header stdRespHeader `json:"header"`
-		Body   stdRespBody   `json:"body"`
+		Data   stdRespData   `json:"data"`
 	}
 	stdRespHeader struct {
 		StatusCode   int64  `json:"status_code"`
 		ResponseTime string `json:"response_time"`
 	}
-	stdRespBody struct {
+	stdRespData struct {
 		Feeds interface{} `json:"feeds,omitempty"`
 	}
 	feeds struct {
@@ -97,7 +97,7 @@ func APIFeedsHandler(c *gin.Context) {
 			ResponseTime: fmt.Sprintf("%fms", time.Since(start).Seconds()*1000),
 			StatusCode:   200,
 		},
-		Body: stdRespBody{
+		Data: stdRespData{
 			Feeds: f,
 		},
 	}
